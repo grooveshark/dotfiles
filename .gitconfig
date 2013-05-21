@@ -1,36 +1,36 @@
 [user]
-	name = put your name here
-	email = you@grooveshark.com
+    name = put your name here
+    email = you@grooveshark.com
 [push]
-	default = tracking
+    default = tracking
 [alias]
-	gr = log --graph --full-history --all --color --pretty=format:\"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s\"
-	forceupdatelive = !git fetch origin && git checkout live && git reset --hard origin/live
+    gr = log --graph --full-history --all --color --pretty=format:\"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s\"
+    forceupdatelive = !git fetch origin && git checkout live && git reset --hard origin/live
     review = !sh -c 'REF=`git rev-parse --symbolic-full-name --abbrev-ref HEAD` && git fetch $1 $2:mergeReview -f && git checkout mergeReview && git rebase $REF && git checkout $REF && git diff HEAD..mergeReview' -
     approve = merge mergeReview
     pr = !git review origin refs/pull/$1/head
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 [push]
-	default = tracking
+    default = tracking
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 [url "git@github.com:"]
-	insteadOf = "https://github.com/"
+    insteadOf = "https://github.com/"
 [help]
-	autocorrect = 30
+    autocorrect = 30
 [pull]
     rebase = true
 [diff]
-	algorithm = patience
+    algorithm = patience
