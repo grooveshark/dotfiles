@@ -1,0 +1,11 @@
+Ever chmod a repo and git loses it's mind, preventing pull / push?
+Try this:
+in repo path,
+#revert decrease in permissions
+git diff --summary | grep --color 'mode change 100755 => 100644' | cut -d' ' -f7- | xargs -d'\n' chmod +x
+#revert increase in permissions
+git diff --summary | grep --color 'mode change 100644 => 100755' | cut -d' ' -f7- | xargs -d'\n' chmod -x
+
+and then 
+git config --global core.filemode false
+will prevent it from happening for all repositories.
