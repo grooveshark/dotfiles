@@ -10,6 +10,7 @@
     approve = merge mergeReview
     pr = !git review origin refs/pull/$1/head
     undo-commit = reset --soft HEAD^
+    oldbranches = for-each-ref --sort=committerdate --format='%(committerdate:short) %(refname:short)' refs/heads/
 [color "branch"]
     current = yellow reverse
     local = yellow
